@@ -4,6 +4,8 @@ class PLAYER():
         self.age = age
         self.defence = defence  
         self.name = name
+        self.is_alive = True
+
     def print_statistic(self):
         print(f"| Имя: {self.name}")
         print(f"| Сила атаки: {self.strenght}")
