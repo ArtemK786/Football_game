@@ -6,6 +6,7 @@ class TEAM:
         self.count_of_players = 5
         self.all_team = []
         self.number_of_fans = randint(100, 1000)
+        self.amount_of_alive_players = 5
     def generate_team(self):
         for i in range(self.count_of_players):
             player = generate_player_1()

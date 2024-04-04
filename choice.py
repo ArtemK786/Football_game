@@ -6,9 +6,14 @@ def find_right_player(team, choice_of_player):
     count = 1
     for player in team.all_team:
         if count == choice_of_player:
+            if player.is_alive:
                 player.print_statistic()
-                team.all_team.remove(player)
-                return player
+                player.is_alive = False
+                team.amount_of_alive_players -= 1
+            else:
+                print("Этот игрок уже играл. Выберите другого игрока: ")
+                your_choice_of_player(team)
+            return player
         count += 1
     print()
 
@@ -20,7 +25,7 @@ def your_choice_of_team(all_available_teams):
 
 
 def your_choice_of_player(your_team):
-    choice_of_player = int(input(f"Выберите одного из {len(your_team.all_team)} игроков: "))
+    choice_of_player = int(input(f"Выберите одного из {your_team.amount_of_alive_players} игроков: "))
     print("Ваш игрок:")
     player = find_right_player(your_team, choice_of_player)
     return player
@@ -40,6 +45,11 @@ def computer_choice_of_team(all_available_teams, your_team):
 
 def computer_choice_of_player(computer_team):
     computer_choice_of_player_1 = randint(1, 5)
+    while True:
+        if computer_team.all_team[computer_choice_of_player_1-1].is_alive:
+            break
+        else:
+            computer_choice_of_player_1 = randint(1, 5)
     print("Игрок компьютера: ")
     player = find_right_player(computer_team, computer_choice_of_player_1)
     return player
