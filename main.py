@@ -35,6 +35,12 @@ while variant != 0:
                 computer_player = computer_choice_of_player(computer_team)
         print(f"Счет команды игрока {your_team_count}")
         print(f"Счёт команды компьютера {computer_team_count}")
+        points.append(your_team_count)
+        points.append(computer_team_count)
+        print()
+        print("Статистика за все игры")
+        for i in range(0, len(points)-1, 2):
+                print(f"Игрок: {points[i]} Компьютер: {points[i + 1]}")
         print()
         variant = int(input("Если вы хотите продолжить напишите 1, если нет 0: "))
 print("Спасибо, до свидания!")
