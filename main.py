@@ -9,8 +9,9 @@ while variant != 0:
         your_team = your_choice_of_team(all_available_teams)
         your_player = your_choice_of_player(your_team)
         print()
+        what_of_max = 1
         computer_team = computer_choice_of_team(all_available_teams, your_team)
-        computer_player = computer_choice_of_player(computer_team)
+        computer_player = computer_choice_of_player(computer_team, what_of_max)
         number_of_round = 1
         your_team_count = 0
         computer_team_count = 0
@@ -26,13 +27,14 @@ while variant != 0:
                         if count_computer:
                                 computer_team_count += 1
                 print()
+                what_of_max += 1
                 print(f"Счет команды игрока {your_team_count}")
                 print(f"Счёт команды компьютера {computer_team_count}")
                 print()
                 your_team.print_team_statistic()
                 your_player = your_choice_of_player(your_team)
                 print()
-                computer_player = computer_choice_of_player(computer_team)
+                computer_player = computer_choice_of_player(computer_team, what_of_max)
         print(f"Счет команды игрока {your_team_count}")
         print(f"Счёт команды компьютера {computer_team_count}")
         points.append(your_team_count)
