@@ -81,4 +81,11 @@ def computer_choice_of_player(computer_team, what_of_max):
     print("Игрок компьютера: ")
     player = find_right_player_computer(computer_team, what_of_max)
     return player
-    
+
+def choice_of_winner(your_team_count, computer_team_count, computer_team, your_team):
+    if your_team_count > computer_team_count:
+        your_team.budget += 500
+        computer_team.budget += 250
+    else:
+        your_team.budget += 250
+        computer_team.budget += 500

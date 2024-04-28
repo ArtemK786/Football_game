@@ -4,6 +4,7 @@ class PLAYER():
         self.age = age
         self.defence = defence  
         self.name = name
+        self.price = round(1000 * (self.strenght + self.defence), 2)
         self.is_alive = True
 
     def print_statistic(self):
@@ -11,4 +12,5 @@ class PLAYER():
         print(f"| Сила атаки: {self.strenght}")
         print(f"| Сила защиты: {self.defence}")
         print(f"| Возраст: {self.age}")
+        print(f'| Цена: {self.price}₽')
     

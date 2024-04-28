@@ -7,6 +7,7 @@ class TEAM:
         self.all_team = []
         self.number_of_fans = randint(100, 1000)
         self.amount_of_alive_players = 5
+        self.budget = 5000
     def generate_team(self):
         for i in range(self.count_of_players):
             player = generate_player_1()
@@ -29,5 +30,10 @@ class TEAM:
             player.print_statistic()
             number_of_player.pop(0)
         print(f"Число болельщиков: {self.number_of_fans}")
+        print(f"Бюджет команды: {self.budget}")
         print()
-
+def revive_the_players(all_available_teams):
+    for team in all_available_teams:
+        for player in team.all_team:
+            player.is_alive = True
+        team.amount_of_alive_players = 5
