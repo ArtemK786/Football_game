@@ -48,7 +48,7 @@ def find_right_player_computer(team, what_of_max):
 
 def your_choice_of_team(all_available_teams):
     choice_of_team = int(input("Введите номер команды: "))
-    all_available_teams[choice_of_team - 1].print_team_statistic
+    all_available_teams[choice_of_team - 1].print_team_statistic()
     return all_available_teams[choice_of_team - 1]   
 
 
@@ -62,7 +62,7 @@ def your_choice_of_player(your_team):
 def computer_choice_of_team(all_available_teams, your_team):
     computer_choice_of_team_1 = randint(0, 4)
     while True:
-        if computer_choice_of_team_1 == all_available_teams.index(your_team):
+        if computer_choice_of_team_1 == all_available_teams.index(your_team) or all_available_teams[computer_choice_of_team_1].amount_of_alive_players < 5:
             computer_choice_of_team_1 = randint(0, 4)
         else:
             break
@@ -72,12 +72,6 @@ def computer_choice_of_team(all_available_teams, your_team):
 
 
 def computer_choice_of_player(computer_team, what_of_max):
-    # computer_choice_of_player_1 = randint(1, 5)
-    # while True:
-    #     if computer_team.all_team[computer_choice_of_player_1-1].is_alive:
-    #         break
-    #     else:
-    #         computer_choice_of_player_1 = randint(1, 5)
     print("Игрок компьютера: ")
     player = find_right_player_computer(computer_team, what_of_max)
     return player
