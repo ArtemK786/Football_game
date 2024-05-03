@@ -13,4 +13,5 @@ class PLAYER():
         print(f"| Сила защиты: {self.defence}")
         print(f"| Возраст: {self.age}")
         print(f'| Цена: {self.price}₽')
+        print(f"| В игре: {self.is_alive}")
     

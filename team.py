@@ -38,3 +38,11 @@ def revive_the_players(all_available_teams):
         for player in team.all_team:
             player.is_alive = True
         team.amount_of_alive_players = 5
+
+
+def your_team_revive(your_team):
+    count_player = 0
+    for player in your_team.all_team:
+        player.is_alive = True
+        count_player += 1
+    your_team.amount_of_alive_players = count_player

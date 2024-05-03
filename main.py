@@ -1,6 +1,7 @@
 from fight import *
-from team import revive_the_players
+from team import revive_the_players, your_team_revive
 from buy_or_exchange_players import choice_of_func
+from choose_players_in_your_comand_to_play import choose_players
 variant = 1
 points = []
 all_available_teams = set_teams()
@@ -10,8 +11,11 @@ while variant != 0:
         revive_the_players(all_available_teams)
         print_all_available_teams(all_available_teams)
         your_team = your_choice_of_team(all_available_teams)
+        your_team_revive(your_team)
         buy_or_exchange = int(input("Если хотите купить игрока, нажмите 1\nЕсли обменять игрока, нажмите 2\nЕсли нет, нажмите 0: "))
         choice_of_func(your_team, all_available_teams, buy_or_exchange)
+        if your_team.number_of_players > 5:
+                choose_players(your_team)
         your_player = your_choice_of_player(your_team)
         print()
         what_of_max = 1
