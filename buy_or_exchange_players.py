@@ -29,7 +29,7 @@ def exchange_players(your_team, all_available_teams):
     what_player_in_other_team = int(input("Номер игрока, на которого хотите обменять: "))
     your_player = your_team.all_team[what_player_in_your_team - 1]
     other_player = other_team.all_team[what_player_in_other_team - 1]
-    if your_team.bidget > other_player.price:
+    if your_team.budget > other_player.price:
         if your_player.price > other_player.price:
             dop_price = your_player.price - other_player.price
             your_team.budget += dop_price
